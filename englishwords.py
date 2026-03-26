@@ -1,16 +1,7 @@
 import random 
-words_to_learn = {
-    "внедрение": "implementation",
-    "масштабируемость": "scalability",
-    "универсальность": "versatility",
-    "избыточность": "redundancy",
-    "эффективность": "efficiency",
-    "неоднозначный": "ambiguous",
-    "последовательный": "consistent",
-    "жизнеспособный": "viable",
-    "уязвимость": "vulnerability",
-    "поддерживаемый": "maintainable"
-}
+import json
+with open('words.json', 'r', encoding='utf-8') as f:
+     words_to_learn = json.load(f)
 N = 5
 words_to_ask = random.sample(list(words_to_learn.keys()),N)
 correct_on_first_try = 0
